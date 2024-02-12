@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Oooh+Baby&display=swap');
+.main-header{
+  padding: 10px 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 40px;
+}
+a{
+  text-decoration: none;
+}
+.main-header-title{
+  font-size: 92px;
+  letter-spacing: -1.5px;
+
+}
+
+.main-header-title-blue{
+  color: blue;
+    color: rgb(0, 119, 255);
+    font-size:60px;
+    font-family: 'Oooh Baby'
+}
+.main-header-title-orange{
+  color: var(--orange);
+    color: orange;
+    font-size:60px;
+    font-family: 'Oleo Script';
+}
+
+.container-menu{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  flex: 1;
+}
+.main-header-menu ul{
+  display: flex;
+  justify-content: flex-end;
+}
+.main-header-menu ul li{
+  list-style: none;
+}
+.main-header-menu a {
+  padding: 10px;
+  color: gray;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+.main-header-menu a:hover{
+  background-color: rgba(88, 179, 231, 0.801);
+  color: #fff;
+}
+
+.badge-carrinho{
+  background-color: rgb(169, 169, 184);
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+}
+

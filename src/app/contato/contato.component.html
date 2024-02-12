@@ -1,0 +1,81 @@
+<h2 class="contact_title"></h2>
+<section class="contact__container">
+  <form class="contact-form" [formGroup]="fromContato" (ngSubmit)="enviarForm()">
+    <input type="text" placeholder="Digite seu nome"
+    formControlName="nome"
+    [class.valid] = "fromContato.controls['nome'].valid"
+    [class.invalid] = "fromContato.controls['nome'].invalid &&
+    (fromContato.controls['nome'].touched || fromContato.controls['nome'].dirty)">
+    <div *ngIf="fromContato.controls['nome'].invalid &&
+    (fromContato.controls['nome'].touched || fromContato.controls['nome'].dirty)">
+    <small class="messagem-erro" *ngIf="fromContato.controls['nome'].hasError('minlength')">
+    Esse campo necessita de no minimo 4 caracteres.
+    </small>
+    <small class="messagem-erro" *ngIf="fromContato.controls['nome'].hasError('required')">
+      Esse campo obrigatorio.
+    </small>
+    </div>
+    <input type="text" placeholder="Assunto"
+    formControlName = "assunto"
+    [class.valid] = "fromContato.controls['assunto'].valid"
+    [class.invalid] = "fromContato.controls['assunto'].invalid &&
+    (fromContato.controls['assunto'].touched || fromContato.controls['assunto'].dirty)">
+    <div *ngIf="fromContato.controls['assunto'].invalid &&
+    (fromContato.controls['assunto'].touched || fromContato.controls['assunto'].dirty)">
+    <small class="messagem-erro" *ngIf="fromContato.controls['assunto'].hasError('minlength')">
+    Esse campo necessita de no minimo 4 caracteres.
+    </small>
+    <small class="messagem-erro" *ngIf="fromContato.controls['assunto'].hasError('required')">
+    Campo obrigatorio!
+    </small>
+    </div>
+    <input type="tel" mask="(00) 0 0000-0000" placeholder="(xx) x xxxx-xxxx"
+    formControlName="telefone"
+    [class.valid]="fromContato.controls['telefone'].valid"
+    [class.invalid]="fromContato.controls['telefone'].invalid &&
+    (fromContato.controls['telefone'].touched || fromContato.controls['telefone'].dirty)">
+    <div *ngIf="fromContato.controls['telefone'].invalid && (fromContato.controls['telefone'].touched || fromContato.controls['telefone'].dirty)">
+      <small class="messagem-erro" *ngIf="fromContato.controls['telefone'].hasError('minlength')">
+      Esse campo necessita de no minimo 11 caracteres.
+      </small>
+      <small class="messagem-erro" *ngIf="fromContato.controls['telefone'].hasError('required')">
+      Campo obrigatorio.
+      </small>
+    </div>
+
+    <input type="email" placeholder="Email"
+    formControlName="email"
+    [class.valid]="fromContato.controls['email'].valid"
+    [class.invalid]="fromContato.controls['email'].invalid &&
+    (fromContato.controls['email'].touched || fromContato.controls['email'].dirty)">
+    <div *ngIf="fromContato.controls['email'].invalid && (fromContato.controls['email'].touched || fromContato.controls['email'].dirty)">
+      <small class="messagem-erro" *ngIf="fromContato.controls['email'].hasError('required')">
+        Campo obrigatorio.
+      </small>
+      <small class="messagem-erro" *ngIf="fromContato.controls['email'].hasError('email')">
+        E-mail invalido!
+      </small>
+    </div>
+    <textarea minlength="10" maxlength="150"
+    formControlName="messagem"
+    [class.valid]="fromContato.controls['messagem'].valid"
+    [class.invalid]="fromContato.controls['messagem'].invalid &&
+    (fromContato.controls['messagem'].touched || fromContato.controls['messagem'].dirty)">
+    <div *ngIf="fromContato.controls['messagem'].invalid && (fromContato.controls['messagem'].touched || fromContato.controls['email'].dirty)">
+      <small class="messagem-erro" *ngIf="fromContato.controls['messagem'].hasError('required')">
+        Campo obrigatorio.
+      </small>
+      <small class="messagem-erro" *ngIf="fromContato.controls['messagem'].hasError('minlength')">
+        Minimo de 10 caracteres.
+      </small>
+    </div>
+  </textarea>
+    <button type="submit" [disabled]="fromContato.invalid">Enviar</button>
+  </form>
+
+  <address>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.6350910061055!2d-34.8762446!3d-8.0365056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab186306a3c951%3A0xa35a45f8e439c150!2sTv.%20Continental%20-%20Campo%20Grande%2C%20Recife%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1707769233233!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p>Tv. Continental - Campo GrandeRecife - PE
+    </p>
+  </address>
+</section>

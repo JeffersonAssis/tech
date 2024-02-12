@@ -1,0 +1,16 @@
+<header class="main-header">
+  <h1 class="main-header-title">
+  <a routerLink=""> <span class="main-header-title-orange"><i class="fas fa-temperature-high"></i> </span> <span class="main-header-title-blue">Tech</span></a>
+  </h1>
+  <div class="container-menu">
+  <nav class="main-header-menu">
+    <ul>
+      <li><a routerLink="produtos" routerLinkActive="router-link-active" >Produtos</a></li>
+      <li><a routerLink="/carrinho">Carrinho<i class="fa-solid fa-cart-shopping"><span class="badge-carrinho" >{{this.carrinhoServece.abtemCarrinho().length}}</span></i></a></li>
+      <li><a routerLink="contato">Contato</a></li>
+      <li><a >Linkdin<i class="fa-brands fa-linkedin"></i> </a></li>
+    </ul>
+  </nav>
+ <app-barra-pesquisa></app-barra-pesquisa>
+</div>
+</header>
